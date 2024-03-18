@@ -38,18 +38,20 @@ Hardware – PCs, Cyclone II , USB flasher
 ### Developed by: Azeez Ahamad
 RegisterNumber:212223110046
 ## program
-## module combinationalcircuit(A,B,C,D,F1);
-## input A,B,C,D;
-## output F1;
-## wire x1,x2,x3,x4,x5;
-## assign x1=(~A)&(~B)&(~C)&(~D);
-## assign x2=(A)&(~C)&(~D);
-## assign x3=(~B)&(C)&(~D);
-## assign x4=(~A)&(B)&(C)&(D);
-## assign x5=(B)&(~C)&(D);
-## assign F1=x1|x2|x3|x4|x5;
-## endmodule 
+```
+module exp22(A,B,C,D,F1);
+input A,B,C,D;
+output F1;
+wire x1,x2,x3,x4,x5;
+assign x1=(~A)&(~B)&(~C)&(~D);
+assign x2=(A)&(~C)&(~D);
+assign x3=(~B)&(C)&(~D);
+assign x4=(~A)&(B)&(C)&(D);
+assign x5=(B)&(~C)&(D);
+assign F1=x1|x2|x3|x4|x5;
+endmodule
 
+```
 
 
 
