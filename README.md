@@ -31,40 +31,54 @@ Hardware – PCs, Cyclone II , USB flasher
 5.	For different input combinations generate the timing diagram.
 
 
-**Program:**
-
-/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
-
-### Developed by: Azeez Ahamad
-RegisterNumber:212223110046
-## program
+## *Program:*
+```Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+Developed by: K SANTHAN KUMAR
+RegisterNumber: 212223240065
 ```
-module exp22(A,B,C,D,F1);
-input A,B,C,D;
-output F1;
-wire x1,x2,x3,x4,x5;
-assign x1=(~A)&(~B)&(~C)&(~D);
-assign x2=(A)&(~C)&(~D);
-assign x3=(~B)&(C)&(~D);
-assign x4=(~A)&(B)&(C)&(D);
-assign x5=(B)&(~C)&(D);
-assign F1=x1|x2|x3|x4|x5;
+
+```
+module experiment(
+    input a, b, c, d, w, x, y, z,
+    output f1, f2
+);
+
+wire adash, bdash, cdash, ddash, ydash, zdash, wdash;
+not(adash, a);
+not(bdash, b);
+not(cdash, c);
+not(ddash, d);
+not(ydash, y);
+not(zdash, z);
+not(wdash, w);
+
+wire p, q, r, s, t, u, term1, term2, term3;
+
+and(p, bdash, ddash);
+and(q, adash, b, d);
+and(r, a, b, cdash);
+and(term1, ydash, z);
+and(term2, x, y);
+and(term3, w, y);
+
+or(f1, p, q, r);
+or(f2, term1, term2, term3);
+
 endmodule
-
 ```
 
+<img width="960" alt="image" src="https://github.com/SANTHAN-2006/BOOLEAN_FUNCTION_MINIMIZATION/assets/80164014/ac5e312c-e7be-4f99-a24f-2e4d7d67977d">
 
+## RTL Realization :
+![image](https://github.com/SANTHAN-2006/BOOLEAN_FUNCTION_MINIMIZATION/assets/80164014/974a7ddc-71c0-401b-829e-9e318ff0f71f)
 
-## RTL realization
-![Screenshot 2024-03-13 160715](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/dbd64921-6857-40ee-a21b-55fa17e9f89b)
+## *Output:*
+<img width="639" alt="image" src="https://github.com/SANTHAN-2006/BOOLEAN_FUNCTION_MINIMIZATION/assets/80164014/f19332b1-d26d-4375-9245-5c88df091248">
 
-## Truth table
-![Screenshot 2024-03-13 160947](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/849f41b1-394f-48f4-b451-88315b927f79)
+## TRUTH TABLE :
+![image](https://github.com/SANTHAN-2006/BOOLEAN_FUNCTION_MINIMIZATION/assets/80164014/c84edbd0-feb7-4900-95f8-e1545ee77b8f)
 
-## Timing Diagram
-![Screenshot 2024-03-13 161036](https://github.com/04Varsha/BOOLEAN_FUNCTION_MINIMIZATION/assets/149035374/533d1307-308c-4a6d-9495-b6f289bf8479)
-
-## Result:
+## *Result:*
 
 Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
 
